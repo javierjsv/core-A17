@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {MaterialModule} from "./modules/material/material.module";
 import {TranslateModule, TranslateService} from "@ngx-translate/core";
+import {NgxSpinnerModule} from "ngx-spinner";
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MaterialModule, TranslateModule,
+  imports: [CommonModule, RouterOutlet, MaterialModule, TranslateModule, NgxSpinnerModule,
   ],
   providers :[TranslateService],
   templateUrl: './app.component.html',
@@ -14,7 +16,8 @@ import {TranslateModule, TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
 
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService,
+              ) {
       this.initApp()
 }
    initApp():void{

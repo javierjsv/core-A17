@@ -9,6 +9,8 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 export function createTranslateLoader(http: HttpClient): unknown {
@@ -20,6 +22,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       CommonModule,
       HttpClientModule,
+      BrowserAnimationsModule,
+      NgxSpinnerModule,
       TranslateModule.forRoot({
         defaultLanguage:'es',
         loader:{
