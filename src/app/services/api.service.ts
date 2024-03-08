@@ -13,7 +13,7 @@ export class ApiService {
     this.urlBase = environment.DOMAIN;
   }
 
-  getPromise(rute : string): Promise<any>{
+  getPro(rute : string): Promise<any>{
     return new Promise((resolve, reject)=>{
       this.http.get(this.urlBase + rute).subscribe({
         next:(resp)=>{
@@ -24,11 +24,49 @@ export class ApiService {
       })
     });
   }
-  getObservable(rute: string):Observable<any>{
+  getObs(rute: string):Observable<any>{
       return  this.http.get(this.urlBase + rute);
   }
-
-  // TODO 2 metodos Post , Put , Delete
-
-
+  postPro(rute : string , params:any): Promise<any>{
+    return new Promise((resolve, reject)=>{
+      this.http.post(this.urlBase + rute , params).subscribe({
+        next:(resp)=>{
+          resolve(resp)
+        },error:(err)=>{
+          reject(err)
+        }
+      })
+    });
+  }
+  postObs(rute: string , paramas: any):Observable<any>{
+    return  this.http.post(this.urlBase + rute , paramas);
+  }
+  putPro(rute : string , params:any): Promise<any>{
+    return new Promise((resolve, reject)=>{
+      this.http.put(this.urlBase + rute , params).subscribe({
+        next:(resp)=>{
+          resolve(resp)
+        },error:(err)=>{
+          reject(err)
+        }
+      })
+    });
+  }
+  putObs(rute: string , paramas: any):Observable<any>{
+    return  this.http.put(this.urlBase + rute , paramas);
+  }
+  deletePro(rute : string ): Promise<any>{
+    return new Promise((resolve, reject)=>{
+      this.http.delete(this.urlBase + rute ).subscribe({
+        next:(resp)=>{
+          resolve(resp)
+        },error:(err)=>{
+          reject(err)
+        }
+      })
+    });
+  }
+  deleteObs(rute: string):Observable<any>{
+    return  this.http.delete(this.urlBase + rute );
+  }
 }
