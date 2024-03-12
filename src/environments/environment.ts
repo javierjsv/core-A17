@@ -1,3 +1,3 @@
 export const environment = {
-  DOMAIN:"localhost:8090"
+  DOMAIN:"https://jsonplaceholder.typicode.com",
 };
