@@ -1,4 +1,5 @@
 const API = 'api';
 export const apiRouters ={
-POSTS : `/posts`
+POSTS : `/posts`,
+COMMENTS : `/comments`,
 }

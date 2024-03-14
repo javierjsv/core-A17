@@ -38,6 +38,7 @@ import {MatNativeDateModule, MatRippleModule} from "@angular/material/core";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatDividerModule} from "@angular/material/divider";
+import {MatBadgeModule} from "@angular/material/badge";
 
 @NgModule({
   declarations: [],
@@ -81,7 +82,8 @@ import {MatDividerModule} from "@angular/material/divider";
     ScrollingModule,
     MatAutocompleteModule,
     MatDividerModule,
-    MatRippleModule
+    MatRippleModule,
+    MatBadgeModule
   ],
   exports: [
     CommonModule,
@@ -125,7 +127,8 @@ import {MatDividerModule} from "@angular/material/divider";
     MatGridListModule,
     MatDividerModule,
     MatDrawer,
-    MatRippleModule
+    MatRippleModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

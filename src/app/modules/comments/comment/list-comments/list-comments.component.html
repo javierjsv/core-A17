@@ -1,0 +1,25 @@
+<div style="padding-left: 50px!important; padding-right: 50px!important;">
+  <span [matBadge]="comments.length" matBadgeOverlap="false"><b>{{"COMMENTS" | translate}}</b></span>
+  @for (comment of comments; track $index){
+    <mat-list>
+      <mat-list-item>
+        <span matListItemTitle>{{comment?.name}}</span>
+      </mat-list-item>
+      <mat-list-item matListItemLine>{{comment?.body}}</mat-list-item>
+      <mat-list-item style="text-align: right"><b>{{comment?.email}}</b> </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+  } @empty {
+    <p>
+      {{"THERE_ARE_NOT_DATA" | translate}}
+    </p>
+  }
+</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true">
+  <p><mat-spinner></mat-spinner></p>
+  <p style="color: white" >   Loading...</p>
+</ngx-spinner>
+
+
+
+

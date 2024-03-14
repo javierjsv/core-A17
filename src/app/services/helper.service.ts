@@ -26,7 +26,7 @@ export class HelperService {
       text :this.translateService.instant(text),
       icon,
       confirmButtonText: this.translateService.instant("CLOSE"),
-      buttonsStyling : false,
+      buttonsStyling : true,
     })
   }
 

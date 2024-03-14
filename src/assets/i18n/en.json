@@ -1,4 +1,11 @@
 {
   "APP_NAME": "students",
-  "CLOSE": "Close"
+  "CLOSE": "Close",
+  "POSTS_LIST": "Post list",
+  "THERE_ARE_DATA": "There are data",
+  "THERE_ARE_NOT_DATA": "There are not data",
+  "COMMENTS": "Comments",
+  "DETAIL_POST": "Detail post",
+  "LOADING": "Loanding",
+  "TITLE": "Title"
 }

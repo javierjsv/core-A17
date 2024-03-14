@@ -21,7 +21,7 @@ export class AppComponent {
       this.initApp()
 }
    initApp():void{
-      const lang: any = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
+      const lang: any = localStorage.getItem('lang') ? localStorage.getItem('lang') : 'es';
       this.translateService.setDefaultLang(lang);
       this.translateService.use(lang);
     }

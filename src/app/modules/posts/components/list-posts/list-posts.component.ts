@@ -13,6 +13,7 @@ import {HelperService} from "../../../../services/helper.service";
 })
 export class ListPostsComponent {
   public post: Array<any>=[]
+  type: string = 'ball-scale-multiple';
   constructor(public api: ApiService , public router : Router , public helperService : HelperService) {
   }
   ngOnInit(): void {
@@ -27,7 +28,7 @@ export class ListPostsComponent {
       },
       error:(err)=>{
         this.helperService.spinnerHidde()
-        console.error(err)
+        this.helperService.alert('ERROR' , 'Hubo un error' , 'error')
       }
     })
   }

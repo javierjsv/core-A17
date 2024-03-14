@@ -1,6 +1,10 @@
 <div class="container">
-  <h1>Detalle Post</h1>
-
-  <h2>Titulo : {{post?.title}}</h2>
+  <h1>{{ "DETAIL_POST" | translate }}</h1>
+  <app-back [rute]="ruta"></app-back>
+  <h2>{{"TITLE" | translate | titlecase}} : {{post?.title}}</h2>
   <p>{{post?.body}}</p>
+  <div style="padding: 10px">
+    <app-list-comments [id]="idPost"></app-list-comments>
+  </div>
 </div>
+<app-spinner></app-spinner>

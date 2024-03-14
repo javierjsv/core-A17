@@ -1,4 +1,11 @@
 {
-  "APP_NAME": "estudiante",
-  "CLOSE": "Cerrar"
+  "APP_NAME": "Core",
+  "CLOSE": "Cerrar",
+  "POSTS_LIST": "Lista de publicaciones",
+  "THERE_ARE_DATA": "Hay Datos",
+  "THERE_ARE_NOT_DATA": "No hay datos",
+  "COMMENTS": "Comentarios",
+  "DETAIL_POST": "Detalle publicación",
+  "LOADING": "Cargando",
+  "TITLE": "Titulo"
 }
