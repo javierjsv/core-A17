@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 })
 export class BackComponent {
   @Input() rute = '';
+  @Input() icon = 'keyboard_backspace';
 
   constructor(public router : Router) {
   }

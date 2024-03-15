@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<p>
+  <mat-toolbar>
+    <app-back [icon]="home"></app-back>
+    <span style="margin-left: 2px">{{"APP_NAME" | translate | uppercase}}</span>
+    <span class="example-spacer"></span>
+    <button  class="example-icon favorite-icon" aria-label="post" (click)="go()" style="margin-right: 2px">
+      {{"POST" | translate}}
+    </button>
+    <mat-slide-toggle  color="primary" (click)="change()" Style="margin-left: 2px" >{{ lang  === "es" ? ("SPANISH" | translate) : ("ENGLISH" | translate)}}</mat-slide-toggle>
+  </mat-toolbar>
+</p>

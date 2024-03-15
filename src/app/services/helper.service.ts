@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {NgxSpinnerService} from "ngx-spinner";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import {FormControl, FormGroup} from "@angular/forms";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -41,6 +41,22 @@ export class HelperService {
     });
   }
 
+  getLocalSorage(item: any): string | undefined {
+    if (localStorage.getItem(item)) {
+      item = localStorage.getItem(item);
+      return item;
+    } else {
+      return undefined;
+    }
+  }
+
+  setLocalSorage(key: string, value: string): void {
+    localStorage.setItem(key, value);
+  }
+
+  deleteLocalStorege(item: string): void {
+    localStorage.removeItem(item);
+  }
 
 
 }

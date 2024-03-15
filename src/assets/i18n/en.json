@@ -1,5 +1,5 @@
 {
-  "APP_NAME": "students",
+  "APP_NAME": "Core",
   "CLOSE": "Close",
   "POSTS_LIST": "Post list",
   "THERE_ARE_DATA": "There are data",
@@ -7,5 +7,10 @@
   "COMMENTS": "Comments",
   "DETAIL_POST": "Detail post",
   "LOADING": "Loanding",
-  "TITLE": "Title"
+  "TITLE": "Title",
+  "WELCOME": "Welcome",
+  "POST" : "Post",
+  "SPANISH": "Spanish",
+  "ENGLISH": "English",
+  "SEE_MORE": "See more"
 }
