@@ -5,7 +5,7 @@
   <div style="margin-top: 5px">
     <mat-grid-list cols="3" rowHeight="2:1">
       @for(post of post; track $index){
-        <mat-grid-tile>
+        <mat-grid-tile >
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>{{post?.title | titlecase}}</mat-card-title>
@@ -13,8 +13,11 @@
             <mat-card-content>
               <p>{{post?.body | slice : 0 : 80}}...</p>
             </mat-card-content>
-            <mat-card-actions>
+            <mat-card-actions >
+              <div style="text-align: center !important;width: 100%">
               <button mat-raised-button color="primary" (click)="go(post?.id)" >{{"SEE_MORE" | translate}}</button>
+
+              </div>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>
