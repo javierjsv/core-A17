@@ -12,5 +12,7 @@
   "POST" : "Post",
   "SPANISH": "Spanish",
   "ENGLISH": "English",
-  "SEE_MORE": "See more"
+  "SEE_MORE": "See more",
+  "EMAIL": "Email",
+  "PASSWORD": "Password"
 }

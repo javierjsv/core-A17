@@ -12,5 +12,7 @@
   "POST": "Publicación",
   "SPANISH": "Español",
   "ENGLISH": "Ingles",
-  "SEE_MORE": "Ver más"
+  "SEE_MORE": "Ver más",
+  "EMAIL": "Corre",
+  "PASSWORD": "Contraseña"
 }

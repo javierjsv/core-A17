@@ -1,24 +1,33 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {TranslateService} from "@ngx-translate/core";
 import {HelperService} from "../../services/helper.service";
 import {GlobalText} from "../../core/config/globlasTexts";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {readableStreamLikeToAsyncGenerator} from "rxjs/internal/util/isReadableStreamLike";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
   home: string = 'home';
-  lang: string = 'es'
+  lang: any = 'es'
   globalText = GlobalText;
   constructor(public router: Router ,
               private translateService: TranslateService ,
               public helperService :HelperService,
               public _snackBar: MatSnackBar) {
   }
+
+  ngOnInit(): void {
+   if (this.helperService.getLocalSorage('lang') !== undefined){
+     const traduction : string | undefined = this.helperService.getLocalSorage('lang')?.toString()
+      this.lang = traduction;
+   }
+
+    }
   go():void{
     this.router.navigateByUrl('post')
   }

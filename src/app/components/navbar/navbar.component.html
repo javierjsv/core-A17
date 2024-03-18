@@ -4,7 +4,7 @@
     <span  class="cursor-pointer" aria-label="post" (click)="go()" style="margin-right: 10%">
       {{"POST" | translate}}
     </span>
-    <mat-slide-toggle  color="primary" (click)="change()" Style="margin-left: 2px" >
+    <mat-slide-toggle  [checked]="lang  === 'en' ? true : false"  color="primary" (click)="change()" Style="margin-left: 2px" >
     <img style="width: 25px ; height: 25px" [src]=" lang  === 'es' ? globalText.IMG_ES :  globalText.IMG_EN">
     </mat-slide-toggle>
 </mat-toolbar>
