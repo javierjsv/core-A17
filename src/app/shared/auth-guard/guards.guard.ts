@@ -13,7 +13,7 @@ export const guardsGuard: CanActivateFn = (route, state) => {
   if (helperService.getLocalSorage('session')){
   return true;
   }else {
-     const url = router.createUrlTree(['auth/login'])
+     const url = router.createUrlTree(['/'])
     return url
   }
 };
