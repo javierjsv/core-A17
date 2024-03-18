@@ -21,7 +21,7 @@ constructor(public  helperService : HelperService , public  router : Router) {
 
   save():void{
     console.log(this.form.value)
-// TODO componente reutilazable para manejo de errores
+    // TODO componente reutilazable para manejo de errores
     // TODO validar login si existe vamos directos al home
     // TODO Mostrar correo en el home
     this.helperService.spinnerShow();

@@ -1,11 +1,12 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h1 >{{"POSTS_LIST" | translate}}</h1>
+  <h1><span [matBadge]="post.length >= 100 ? '90+' :  post.length " matBadgeOverlap="true">{{"POSTS_LIST" | translate}}</span></h1>
 
-  <div style="margin-top: 5px">
-    <mat-grid-list cols="3" rowHeight="2:1">
+  <div  class="row">
+
       @for(post of post; track $index){
-        <mat-grid-tile >
+
+        <div class="col-3 my-1">
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>{{post?.title | titlecase}}</mat-card-title>
@@ -15,19 +16,15 @@
             </mat-card-content>
             <mat-card-actions >
               <div style="text-align: center !important;width: 100%">
-              <button mat-raised-button color="primary" (click)="go(post?.id)" >{{"SEE_MORE" | translate}}</button>
-
+                <button mat-raised-button color="primary" (click)="go(post?.id)" >{{"SEE_MORE" | translate}}</button>
               </div>
             </mat-card-actions>
           </mat-card>
-        </mat-grid-tile>
+        </div>
       }@empty{
         <p>
           {{"THERE_ARE_NOT_DATA" | translate}}
         </p>}
-    </mat-grid-list>
   </div>
-
 </div>
-
 <app-spinner [type]="type" ></app-spinner>

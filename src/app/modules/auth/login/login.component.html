@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1 class="text-center display-1"> login</h1>
+  <h1 class="text-center display-5">{{"LOGIN" | translate}}</h1>
   <div class="text-center">
     <form [formGroup]="form">
       <div class="row">
@@ -12,7 +12,7 @@
           <p class="m-0">
           <span class="text-danger"
                 *ngIf="form.controls.email.status === 'INVALID' && form.controls.email.touched
-              ">* Este campo es requerido
+              ">* {{"THIS_FIELD_IS_REQUIRED" | translate}}
         </span>
           </p>
 
@@ -26,7 +26,7 @@
 
           <span class="text-danger"
                 *ngIf="form.controls.password.status === 'INVALID' && form.controls.password.touched
-              ">* Este campo es requerido
+              ">{{"THIS_FIELD_IS_REQUIRED" | translate}}
         </span>
           </p>
         </div>

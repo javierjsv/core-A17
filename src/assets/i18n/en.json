@@ -14,5 +14,8 @@
   "ENGLISH": "English",
   "SEE_MORE": "See more",
   "EMAIL": "Email",
-  "PASSWORD": "Password"
+  "PASSWORD": "Password",
+  "LOGIN": "Login",
+  "THIS_FIELD_IS_REQUIRED": "This field is required",
+  "SEND": "Send"
 }

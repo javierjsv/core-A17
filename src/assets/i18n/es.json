@@ -13,6 +13,9 @@
   "SPANISH": "Español",
   "ENGLISH": "Ingles",
   "SEE_MORE": "Ver más",
-  "EMAIL": "Corre",
-  "PASSWORD": "Contraseña"
+  "EMAIL": "Correo",
+  "PASSWORD": "Contraseña",
+  "LOGIN": "Inicio de sesión",
+  "THIS_FIELD_IS_REQUIRED": "Este campo es requerido",
+  "SEND": "Enviar"
 }
