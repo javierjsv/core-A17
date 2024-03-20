@@ -23,12 +23,9 @@ export class ListCommentsComponent  implements  OnInit{
   }
 
   getComments():void{
-
     this.api.getPro(apiRouters.POSTS+'/'+this.id + apiRouters.COMMENTS).then(resp=>{
-      console.log(resp)
       this.comments = resp;
     }).catch(err=>{
-      console.log(err)
       this.helperService.alert('ERROR' , 'Hubo un error' , 'error')
     });
   }

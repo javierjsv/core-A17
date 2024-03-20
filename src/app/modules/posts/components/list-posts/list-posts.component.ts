@@ -19,6 +19,8 @@ export class ListPostsComponent {
   ngOnInit(): void {
     this.getpost();
   }
+
+
   getpost(): void{
     this.helperService.spinnerShow();
     this.api.getObs(apiRouters.POSTS).subscribe({

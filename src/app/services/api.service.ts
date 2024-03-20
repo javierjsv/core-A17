@@ -9,8 +9,10 @@ import {Observable} from "rxjs";
 export class ApiService {
 
   public urlBase = '';
+  public urlBaseMock = '';
   constructor(public http : HttpClient) {
     this.urlBase = environment.DOMAIN;
+    this.urlBaseMock = environment.DOMAIN_MOCKAPI;
   }
 
   getPro(rute : string): Promise<any>{
@@ -24,8 +26,9 @@ export class ApiService {
       })
     });
   }
-  getObs(rute: string):Observable<any>{
-      return  this.http.get(this.urlBase + rute);
+  getObs(rute: string , domine = true):Observable<any>{
+       const  url = domine  ? this.urlBase + rute : this.urlBaseMock + rute
+      return  this.http.get(url);
   }
   postPro(rute : string , params:any): Promise<any>{
     return new Promise((resolve, reject)=>{
