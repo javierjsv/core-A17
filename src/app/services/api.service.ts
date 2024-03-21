@@ -15,9 +15,10 @@ export class ApiService {
     this.urlBaseMock = environment.DOMAIN_MOCKAPI;
   }
 
-  getPro(rute : string): Promise<any>{
+  getPro(rute : string , domine = true): Promise<any>{
+    const  url = domine  ? this.urlBase + rute : this.urlBaseMock + rute
     return new Promise((resolve, reject)=>{
-      this.http.get(this.urlBase + rute).subscribe({
+      this.http.get(url).subscribe({
         next:(resp)=>{
           resolve(resp)
         },error:(err)=>{
@@ -30,9 +31,10 @@ export class ApiService {
        const  url = domine  ? this.urlBase + rute : this.urlBaseMock + rute
       return  this.http.get(url);
   }
-  postPro(rute : string , params:any): Promise<any>{
+  postPro(rute : string , params:any , domine = true): Promise<any>{
+    const  url = domine  ? this.urlBase + rute : this.urlBaseMock + rute
     return new Promise((resolve, reject)=>{
-      this.http.post(this.urlBase + rute , params).subscribe({
+      this.http.post(url , params).subscribe({
         next:(resp)=>{
           resolve(resp)
         },error:(err)=>{

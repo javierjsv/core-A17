@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HelperService} from "../../../services/helper.service";
 import {Router} from "@angular/router";
+import {ApiService} from "../../../services/api.service";
+import {apiRouters} from "../../../core/config/apiRouters";
 
 @Component({
   selector: 'app-login',
@@ -11,34 +13,36 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent {
   form = new FormGroup({
-    email:new FormControl('' , Validators["required"]),
-    password:new FormControl('' ,Validators["required"]),
+    email:new FormControl('javier@hotmail.com' , Validators["required"]),
+    password:new FormControl('1234' ,Validators["required"]),
   });
-
-
-constructor(public  helperService : HelperService , public  router : Router) {
-}
-
+  constructor(public  helperService : HelperService , public  router : Router , public api:ApiService) {
+  }
   save():void{
-    console.log(this.form.value)
-    // TODO componente reutilazable para manejo de errores --
-    // TODO validar login si existe vamos directos al home
-    // TODO Mostrar correo en el home
     this.helperService.spinnerShow();
-      if (this.form.value.email === 'javierjsv@hotmail.com' && (this.form.value.password === "1234")){
-
-        const data  = {
-          email :  'javierjsv@hotmail.com',
-          password :"1234"
+    this.api.getPro(apiRouters.USERS , false).then(resp=>{
+      for (let i = 0 ; resp.length > i ; i ++){
+        if (resp[i]['email'] === this.form.value.email &&  resp[i]['password'] === this.form.value.password){
+          this.helperService.spinnerHidde();
+          this.helperService.setLocalSorage('user' ,  JSON.stringify(resp[i]));
+          this.helperService.setLocalSorage('session' , 'true');
+          this.helperService.alert('Bienvenido' , resp[i]['name'] , 'success');
+          this.router.navigateByUrl('home');
+          return;
+        }else {
+          this.helperService.alert('ERROR' , 'correo o contraseña invalidad' , 'error');
+          this.helperService.spinnerHidde();
         }
-        this.helperService.setLocalSorage('user' ,  JSON.stringify(data));
-        this.helperService.setLocalSorage('session' , 'true');
-        this.router.navigateByUrl('home');
-      }else {
-        this.helperService.alert('ERROR' , 'correo o contraseña invalidad' , 'error');
       }
 
+    }).catch(()=>{
+      this.helperService.alert('SORRY' , 'Tenemos un error' , 'error');
       this.helperService.spinnerHidde()
+    })
   }
 
+
+  go():void{
+    this.router.navigateByUrl('auth/register');
+  }
 }

@@ -8,11 +8,12 @@ import {TranslateModule} from "@ngx-translate/core";
 import { BackComponent } from './back/back.component';
 import {MaterialModule} from "../modules/material/material.module";
 import { HomeComponent } from './home/home.component';
+import { ErrorsFormComponent } from './errors-form/errors-form.component';
 
 
 
 @NgModule({
-  declarations: [SpinnerComponent, NavbarComponent, BackComponent, HomeComponent],
+  declarations: [SpinnerComponent, NavbarComponent, BackComponent, HomeComponent, ErrorsFormComponent],
   imports: [
     CommonModule,
     MatProgressSpinner,
@@ -20,7 +21,7 @@ import { HomeComponent } from './home/home.component';
     TranslateModule,
     MaterialModule
   ],exports:[
-    SpinnerComponent, NavbarComponent , BackComponent
+    SpinnerComponent, NavbarComponent , BackComponent , ErrorsFormComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,0 +1,24 @@
+<ng-container *ngIf="input !== ''">
+  <div *ngFor="let validation of validationMessages[input]">
+    <div
+      class="error-message"
+      *ngIf="form?.get(input)?.hasError(validation['type']) && (form?.get(input)?.dirty || form?.get(input)?.touched)"
+    >
+      <small class="text-danger">
+        <mat-icon class="icon-form-err" *ngIf="ShowIcon">{{ icon }}</mat-icon>
+        {{ validation['message'] | translate }}
+      </small>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="input === ''">
+  <div *ngFor="let validation of validationMessages['form']">
+    <div class="error-message" *ngIf="form.hasError(validation['type'])">
+      <small class="text-danger">
+        <mat-icon class="icon-form-err" *ngIf="ShowIcon">{{ icon }}</mat-icon>
+        {{ validation['message'] | translate }}
+      </small>
+    </div>
+  </div>
+</ng-container>
+
